@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/TheAlakazam/file2fa/compare/v1.1.0...v1.2.0) (2025-06-02)
+
+### Features
+
+* add Upload and Home page ([2068f56](https://github.com/TheAlakazam/file2fa/commit/2068f5688f19ce59a0e06bad3f802517cb6a2012))
+
 ## [1.1.0](https://github.com/TheAlakazam/file2fa/compare/v1.0.0...v1.1.0) (2025-06-02)
 
 ### Features
