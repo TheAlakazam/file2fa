@@ -6,7 +6,13 @@ export default {
         '@semantic-release/release-notes-generator',
         '@semantic-release/changelog',
         '@semantic-release/github',
-        '@semantic-release/git'
+        '@semantic-release/git',
+        [
+            '@semantic-release/npm',
+            {
+                npmPublish: false, // Set to false if you don't want to publish to npm
+            },
+        ],
     ],
     preset: 'conventionalcommits',
     changelogFile: 'CHANGELOG.md',
