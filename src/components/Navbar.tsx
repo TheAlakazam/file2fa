@@ -4,12 +4,6 @@ import { Moon, Sun, Menu } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import {
-    DropdownMenu,
-    DropdownMenuTrigger,
-    DropdownMenuContent,
-    DropdownMenuItem,
-} from '@/components/ui/dropdown-menu'
-import {
     Sheet,
     SheetTrigger,
     SheetContent,
@@ -25,7 +19,6 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
     const navLinks = [
         { label: 'Home', to: '/' },
-        { label: 'About', to: '/about' },
         { label: 'GitHub', to: 'https://github.com/thealakazam/file2fa', external: true },
     ]
 
@@ -62,25 +55,6 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
                         )
                     )}
 
-                    {/* Help Dropdown */}
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" className="text-sm font-medium">
-                                Help
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                            <DropdownMenuItem asChild>
-                                <Link to="/help/file-formats">File Formats</Link>
-                            </DropdownMenuItem>
-                            <DropdownMenuItem asChild>
-                                <Link to="/help/errors">Common Errors</Link>
-                            </DropdownMenuItem>
-                            <DropdownMenuItem asChild>
-                                <Link to="/help/faq">FAQ</Link>
-                            </DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
 
                     {/* Theme Toggle */}
                     <Button
@@ -124,10 +98,6 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
                                     )
                                 )}
 
-                                <div className="pt-4 text-sm font-semibold">Help</div>
-                                <Link to="/help/file-formats" className="text-sm">File Formats</Link>
-                                <Link to="/help/errors" className="text-sm">Common Errors</Link>
-                                <Link to="/help/faq" className="text-sm">FAQ</Link>
 
                                 <div className="pt-6">
                                     <Button
