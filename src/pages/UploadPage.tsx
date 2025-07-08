@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { Info, FileCheck, FileWarning } from 'lucide-react'
+import { Info, FileCheck, FileWarning, Loader2 } from 'lucide-react'
 
 import { extractTextFromPDF } from '@/lib/pdfImage'
 import { extractStockSymbol, ParsedEtradeRow, parseEtradeOcr } from '@/lib/parseEtrade'
@@ -18,6 +18,8 @@ const UploadPage = () => {
     const [fileAccepted, setFileAccepted] = useState(false)
     const [ocrText, setOcrText] = useState<string | null>(null)
     const [parsedRows, setParsedRows] = useState<ParsedEtradeRow[]>([])
+    const [isProcessing, setIsProcessing] = useState(false)
+    const [processingStep, setProcessingStep] = useState('')
     const navigate = useNavigate();
 
     const handleFileSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,24 +40,34 @@ const UploadPage = () => {
 
         if (file.name.toLowerCase().endsWith('.pdf')) {
             try {
+                setIsProcessing(true)
+                setProcessingStep('Extracting text from PDF...')
+                
                 const pages = await extractTextFromPDF(file)
                 const raw = pages.join('\n')
                 setOcrText(raw) // reuse ocrText to hold structured text
 
+                setProcessingStep('Parsing transaction data...')
                 const parsedData = parseEtradeOcr(raw)
                 setParsedRows(parsedData)
                 const stockSymbol = extractStockSymbol(raw);
+                
+                setProcessingStep('Fetching company information...')
                 const [companyInfo, { peak, dec31 }] = await Promise.all([
                     fetchCompanyFromOpenFIGI(stockSymbol),
                     fetchPeakAndDec31Price(stockSymbol)
                 ])
 
+                setProcessingStep('Generating Schedule FA entries...')
                 const scheduleFaRows = await mapToScheduleFA(parsedData, companyInfo, peak, dec31);
+                
+                setIsProcessing(false)
                 navigate('/results', { state: { rows: scheduleFaRows, stockSymbol } })
             } catch (err) {
                 console.error('PDF text extraction failed:', err)
                 setFileError('Failed to extract text from PDF.')
                 setOcrText(null)
+                setIsProcessing(false)
             }
         }
 
@@ -101,6 +113,14 @@ const UploadPage = () => {
                         <FileWarning className="h-4 w-4" />
                         <AlertTitle>Error</AlertTitle>
                         <AlertDescription>{fileError}</AlertDescription>
+                    </Alert>
+                )}
+
+                {isProcessing && (
+                    <Alert>
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        <AlertTitle>Processing...</AlertTitle>
+                        <AlertDescription>{processingStep}</AlertDescription>
                     </Alert>
                 )}
             </section>
