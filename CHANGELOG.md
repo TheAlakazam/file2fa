@@ -1,3 +1,9 @@
+## [1.5.0](https://github.com/TheAlakazam/file2fa/compare/v1.4.0...v1.5.0) (2025-07-08)
+
+### Features
+
+* remove navbar about help ([0d61d5d](https://github.com/TheAlakazam/file2fa/commit/0d61d5d2535e9c596fc4fef2cfe88c2089d54543))
+
 ## [1.4.0](https://github.com/TheAlakazam/file2fa/compare/v1.3.0...v1.4.0) (2025-07-08)
 
 ### Features
