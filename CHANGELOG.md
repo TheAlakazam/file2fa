@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/TheAlakazam/file2fa/compare/v1.3.0...v1.4.0) (2025-07-08)
+
+### Features
+
+* add processing ui ([40e8687](https://github.com/TheAlakazam/file2fa/commit/40e86877b91b6b505c7323898d6fbf27d4f18560))
+
 ## [1.3.0](https://github.com/TheAlakazam/file2fa/compare/v1.2.0...v1.3.0) (2025-07-08)
 
 ### Features
