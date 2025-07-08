@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
+import ResultPageImage from '@/assets/ResultsPage.png'
+import UploadPageImage from '@/assets/UploadPage.png'
 
 const HomePage = () => {
     return (
@@ -18,15 +20,15 @@ const HomePage = () => {
 
             {/* Visual Flow / Mockup Images */}
             <section className="flex flex-col gap-8 items-center px-4">
-                <img src="https://picsum.photos/800/400" alt="Upload Flow" className="rounded-xl shadow w-full max-w-4xl" />
-                <img src="https://picsum.photos/1000/600" alt="Processed Table" className="rounded-xl shadow w-full max-w-4xl" />
+                <img src={UploadPageImage} alt="Upload Flow" className="rounded-xl shadow w-full max-w-4xl" />
+                <img src={ResultPageImage} alt="Schedule FA Results Table" className="rounded-xl shadow w-full max-w-4xl" />
             </section>
 
             {/* How It Works */}
             <section className="max-w-3xl mx-auto px-4">
                 <h2 className="text-2xl font-semibold mb-4">How It Works</h2>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground text-base">
-                    <li>Upload your E*TRADE transaction PDF or CSV</li>
+                    <li>Upload your E*TRADE transaction PDF</li>
                     <li>We extract relevant foreign asset details locally</li>
                     <li>You review the auto-generated Schedule FA table</li>
                     <li>Copy & file it in your ITR with confidence</li>

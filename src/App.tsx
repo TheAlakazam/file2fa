@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar"
 import { Footer } from "./components/Footer";
 import HomePage from "./pages/Home";
 import UploadPage from "./pages/UploadPage";
+import ResultsPage from "./pages/ResultsPage";
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/upload" element={<UploadPage />} />
           <Route path="/about" element={<div>About Page</div>} />
+          <Route path="/results" element={<ResultsPage />} />
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </main>
