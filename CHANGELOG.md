@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/TheAlakazam/file2fa/compare/v1.2.0...v1.3.0) (2025-07-08)
+
+### Features
+
+* Add Results Page and integrate company info and price fetching ([e54fa30](https://github.com/TheAlakazam/file2fa/commit/e54fa304f6b9f08499c6feb318752b53e5844f41))
+
 ## [1.2.0](https://github.com/TheAlakazam/file2fa/compare/v1.1.0...v1.2.0) (2025-06-02)
 
 ### Features
