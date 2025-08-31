@@ -27,7 +27,7 @@ const ResultsPage: React.FC = () => {
                 <h1 className="text-2xl font-bold">
                     Schedule FA Results <span className="text-muted-foreground">({stockSymbol})</span>
                 </h1>
-                <Button 
+                <Button
                     onClick={() => navigate('/upload')}
                     variant="outline"
                 >
@@ -46,6 +46,7 @@ const ResultsPage: React.FC = () => {
                                 <th className="p-2 text-left">Acquired</th>
                                 <th className="p-2 text-left">Initial Value</th>
                                 <th className="p-2 text-left">Peak Value</th>
+                                <th className="p-2 text-left">Closing Value</th>
                                 <th className="p-2 text-left">Gross Proceeds</th>
                             </tr>
                         </thead>
@@ -59,6 +60,7 @@ const ResultsPage: React.FC = () => {
                                     <td className="p-2">{row.dateOfAcquisition}</td>
                                     <td className="p-2">₹{row.initialValueINR.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                                     <td className="p-2">₹{row.peakValueINR.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                                    <td className="p-2">₹{row.closingValueINR.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                                     <td className="p-2">₹{row.totalGrossProceedsINR.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                                 </tr>
                             ))}
