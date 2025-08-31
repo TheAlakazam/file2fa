@@ -1,3 +1,9 @@
+## [1.6.0](https://github.com/TheAlakazam/file2fa/compare/v1.5.0...v1.6.0) (2025-08-31)
+
+### Features
+
+* show Closing Value ([97681b6](https://github.com/TheAlakazam/file2fa/commit/97681b6e956a0fd768867077011f96c93f18b8c6))
+
 ## [1.5.0](https://github.com/TheAlakazam/file2fa/compare/v1.4.0...v1.5.0) (2025-07-08)
 
 ### Features
