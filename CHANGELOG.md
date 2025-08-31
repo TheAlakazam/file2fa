@@ -1,3 +1,9 @@
+## [1.7.0](https://github.com/TheAlakazam/file2fa/compare/v1.6.0...v1.7.0) (2025-08-31)
+
+### Features
+
+* Support CSV ([a969b3d](https://github.com/TheAlakazam/file2fa/commit/a969b3df641fd9c1a24b61298c7427082371910a))
+
 ## [1.6.0](https://github.com/TheAlakazam/file2fa/compare/v1.5.0...v1.6.0) (2025-08-31)
 
 ### Features
